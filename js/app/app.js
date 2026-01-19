@@ -1,4 +1,4 @@
-import { router } from './router.js';
+import { router } from '../router.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const app = Vue.createApp({
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
 
     mounted() {
-      // Просто инициализация без сложной логики
+      // Простая инициализация
     },
 
     methods: {
@@ -24,9 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Используем только роутер
   app.use(router);
-
-  // Монтируем приложение
   app.mount('#content');
 });

@@ -1,8 +1,8 @@
 import { login } from './pages/login.js';
 
-// Для остальных страниц создаем заглушки
+// Создайте простые заглушки для остальных страниц
 const stubComponent = {
-  template: `<div>Page is under construction</div>`
+  template: `<div>Page</div>`
 };
 
 export const router = VueRouter.createRouter({
@@ -18,4 +18,4 @@ export const router = VueRouter.createRouter({
     { path: '/payments', name: 'Payments', component: stubComponent },
     { path: '/sites', name: 'Sites', component: stubComponent }
   ]
-}); 
+});
