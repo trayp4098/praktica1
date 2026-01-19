@@ -5,5 +5,5 @@ RewriteBase /praktica1/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-# Все остальные запросы перенаправляем на index.html
+#  остальные запросы перенаправляем на index.html
 RewriteRule . /praktica1/index.html [L]
