@@ -6,15 +6,11 @@
   <link rel="stylesheet" href="./css/template.css">
   <link rel="stylesheet" href="./css/font-awesome5.css">
 
-  <!-- Подключите из CDN или используйте локальные файлы БЕЗ type="module" -->
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  <script src="https://unpkg.com/vue-router@4"></script>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  
-  <!-- ВАЖНО: подключите router.js ПЕРЕД app.js и БЕЗ type="module" -->
-  <script src="./js/app/router.js"></script>
-  <script src="./js/app/app.js"></script>
+  <script src="./js/libs/vue.global.prod.js"></script>
+  <script src="./js/libs/vue-router.global.js"></script>
+  <script src="./js/libs/axios.min.js"></script>
+  <script src="./js/libs/chart.js"></script>
+  <script src="./js/app/app.js" type="module"></script>
 </head>
 <body>
   <main id="content">
