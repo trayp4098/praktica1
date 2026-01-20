@@ -1,21 +1,28 @@
 import { login } from './pages/login.js';
-
-// Создайте простые заглушки для остальных страниц
-const stubComponent = {
-  template: `<div>Page</div>`
-};
+import { campaigns } from './pages/campaigns.js';
+import { campaign } from './pages/campaign.js';
+import { users } from './pages/users.js';
+import { user } from './pages/user.js';
+import { ads } from './pages/ads.js';
+import { statistics } from './pages/statistics.js';
+import { payments } from './pages/payments.js';
+import { sites } from './pages/sites.js';
 
 export const router = VueRouter.createRouter({
   history: VueRouter.createWebHashHistory(),
   routes: [
     { path: '/', name: 'Sign in', component: login },
-    { path: '/campaigns', name: 'Campaigns', component: stubComponent },
-    { path: '/campaign/:id', name: 'Campaign', component: stubComponent },
-    { path: '/users', name: 'Users', component: stubComponent },
-    { path: '/user/:id', name: 'User', component: stubComponent },
-    { path: '/ads', name: 'Ads', component: stubComponent },
-    { path: '/statistics', name: 'Statistics', component: stubComponent },
-    { path: '/payments', name: 'Payments', component: stubComponent },
-    { path: '/sites', name: 'Sites', component: stubComponent }
+
+    { path: '/campaigns', name: 'Campaigns', component: campaigns },
+    { path: '/campaign/:id', name: 'Campaign', component: campaign },
+
+    { path: '/users', name: 'Users', component: users },
+    { path: '/user/:id', name: 'User', component: user },
+
+    { path: '/ads', name: 'Ads', component: ads },
+
+    { path: '/statistics', name: 'Statistics', component: statistics },
+    { path: '/payments', name: 'Payments', component: payments },
+    { path: '/sites', name: 'Sites', component: sites }
   ]
 });
