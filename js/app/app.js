@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const app = Vue.createApp({
     data() {
       return {
-        url: "http://affiliate.kolchin.com",
+        url: "http://affiliate.yanbasok.com",
         user: {
           name: "",
           phone: "",
