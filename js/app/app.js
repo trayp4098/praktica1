@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const app = Vue.createApp({
     data() {
       return {
-        url: "http://affiliate.yanbasok.com",
+        url: "https://affiliate.yanbasok.com",
         user: {
           name: "",
           phone: "",
@@ -158,3 +158,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   app.mount('#content');
 });
+
