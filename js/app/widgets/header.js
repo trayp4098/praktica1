@@ -1,12 +1,22 @@
 export const header = {
+  data: function () {
+    return {
+      user: {},
+      parent: "",
+      active: 0,
+      menu: 0
+    };
+  },
+  watch: {
+  },
+  mounted() {
+    this.parent = this.$parent.$parent;
+  },
+  methods: {
+  },
   template: `
-    <header class="app-header">
-      <div class="header-content">
-        <h1>Партнерская панель</h1>
-        <nav>
-          <slot></slot>
-        </nav>
-      </div>
+    <header class="header">
+      <msg ref="msg"/>
     </header>
   `
 };
