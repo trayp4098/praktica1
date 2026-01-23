@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const app = Vue.createApp({
     data() {
       return {
-        url: "https://affiliate.yanbasok.com",
+        url: "http://affiliate.yanbasok.com",
         user: {
           name: "",
           phone: "",
@@ -144,18 +144,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
         return fd;
       }
-    }
+    },
+
+    // ДОБАВЬТЕ ЭТОТ ШАБЛОН
+    template: `
+      <div>
+        <msg ref="msg"></msg>
+        <router-view></router-view>
+      </div>
+    `
   });
 
   app.use(router);
 
-  app.component('app-header', header);
-  app.component('app-search', search);
-  app.component('app-popup', popup);
-  app.component('app-msg', msg);
-  app.component('app-toogle', toogle);
-  app.component('app-img', img);
+  app.component('header', header);
+  app.component('search', search);
+  app.component('popup', popup);
+  app.component('msg', msg);
+  app.component('toogle', toogle);
+  app.component('img', img);
 
   app.mount('#content');
 });
-
