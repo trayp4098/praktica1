@@ -44,7 +44,7 @@ export const login = {
 
     template: `
     <div class="flex">
-        <app-msg ref="msg"/>
+        <msg ref="msg"/>
 
         <div id="left-area" class="w40">
             <div class="header">
