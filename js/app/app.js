@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   app.use(router);
 
-  app.component('header', header);
+  app.component('header-component', header);
   app.component('search', search);
   app.component('popup', popup);
   app.component('msg', msg);
@@ -165,5 +165,4 @@ document.addEventListener('DOMContentLoaded', () => {
   app.component('img', img);
 
   app.mount('#content');
-
 });
