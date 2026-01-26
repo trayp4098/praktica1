@@ -43,14 +43,14 @@ export const login = {
     },
 
     template: `
-    <div class="flex">
+    <div class="flex login-container">
         <msg ref="msg"/>
 
         <div id="left-area" class="w40">
             <div class="header">
                 <div class="wrapper flex">
                     <div class="w40 logo">
-                        <img src="./images/favicon.ico" />
+                        <img src="./images/favicon.ico" class="mirror-logo" />
                     </div>
                     <div class="w60 al">
                         <h1>Affiliate Sign in</h1>
