@@ -20,16 +20,41 @@ body {
 /* ===== Layout ===== */
 .flex {
     display: flex;
+}
+
+.w20 { width: 20%; }
+.w40 { width: 40%; }
+.w60 { width: 60%; }
+.w70 { width: 70%; }
+.w80 { width: 80%; }
+
+#left-area .header .w60.al h1 {
+    margin-left: -350px;
+}
+.al {
+    text-align: left;
+}
+
+.ptb20 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.p20 {
+    padding: 20px;
+}
+
+/* ===== Login Page ===== */
+.login-container {
     width: 100vw;
     height: 100vh;
     flex-direction: row-reverse;
 }
 
-.w40 { width: 40%; }
-.w60 { width: 60%; }
-
-.al {
-    text-align: left;
+/* Зеркальное лого */
+.mirror-logo {
+    transform: scaleX(-1);
+    height: 80px;
 }
 
 /* ===== Header ===== */
@@ -50,6 +75,7 @@ body {
 .header h1 {
     font-size: 20px;
     font-weight: 700;
+    margin: 0;
 }
 
 .logo img {
@@ -77,6 +103,8 @@ body {
     background: var(--bg-light);
     display: flex;
     flex-direction: column;
+    width: 40%;
+    height: 100vh;
 }
 
 .inner-form {
@@ -140,7 +168,9 @@ input:focus {
 
 /* ===== Right area / Image ===== */
 #right-area {
+    width: 60%;
     overflow: hidden;
+    height: 100vh;
 }
 
 #right-area img {
@@ -151,308 +181,336 @@ input:focus {
 
 /* Alert message */
 .alertMsg {
-  font-size: inherit;
-  padding: 20px 0;
-  position: fixed;
-  bottom: 5%;
-  left: 2%;
-  border-radius: 10px;
-  z-index: 999;
-  height: auto;
-  display: none;
-  color: red;
-  background-color: rgba(255, 228, 228, 0.75);
-  box-shadow: 0px 0 10px 0px rgba(205, 30, 11, 0.5);
-  animation: showFromLeft 0.3s linear;
+    font-size: inherit;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 5%;
+    left: 2%;
+    border-radius: 10px;
+    z-index: 999;
+    height: auto;
+    display: none;
+    color: red;
+    background-color: rgba(255, 228, 228, 0.75);
+    box-shadow: 0px 0 10px 0px rgba(205, 30, 11, 0.5);
+    animation: showFromLeft 0.3s linear;
 }
 
 /* Success message */
 .successMsg {
-  font-size: inherit;
-  padding: 20px 0;
-  position: fixed;
-  bottom: 5%;
-  left: 2%;
-  border-radius: 10px;
-  z-index: 999;
-  height: auto;
-  display: none;
-  color: green;
-  background-color: rgba(218, 249, 223, 0.75);
-  box-shadow: 0px 0 10px 0px rgba(11, 205, 61, 0.5);
-  animation: showFromLeft 0.3s normal;
+    font-size: inherit;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 5%;
+    left: 2%;
+    border-radius: 10px;
+    z-index: 999;
+    height: auto;
+    display: none;
+    color: green;
+    background-color: rgba(218, 249, 223, 0.75);
+    box-shadow: 0px 0 10px 0px rgba(11, 205, 61, 0.5);
+    animation: showFromLeft 0.3s normal;
 }
 
 /* Keyframes for sliding in from left */
 @keyframes showFromLeft {
-  0% { opacity: 0; margin-left: -100%; }
-  25% { opacity: 0.2; margin-left: -50%; }
-  35% { opacity: 0.4; margin-left: -20%; }
-  50% { opacity: 0.8; margin-left: -15%; }
-  65% { opacity: 0.9; margin-left: -12%; }
-  75% { opacity: 0.9; margin-left: -10%; }
-  80% { opacity: 0.9; margin-left: -8%; }
-  85% { opacity: 0.95; margin-left: -6%; }
-  90% { opacity: 0.95; margin-left: -4%; }
-  95% { opacity: 0.95; margin-left: -2%; }
-  100% { opacity: 1; margin-left: 0; }
+    0% { opacity: 0; margin-left: -100%; }
+    25% { opacity: 0.2; margin-left: -50%; }
+    35% { opacity: 0.4; margin-left: -20%; }
+    50% { opacity: 0.8; margin-left: -15%; }
+    65% { opacity: 0.9; margin-left: -12%; }
+    75% { opacity: 0.9; margin-left: -10%; }
+    80% { opacity: 0.9; margin-left: -8%; }
+    85% { opacity: 0.95; margin-left: -6%; }
+    90% { opacity: 0.95; margin-left: -4%; }
+    95% { opacity: 0.95; margin-left: -2%; }
+    100% { opacity: 1; margin-left: 0; }
 }
 
-/* ===== Campaigns page ===== */
-.campaigns-page {
-  padding: 30px 40px;
-  background: #f3f8fb;
-  min-height: 100vh;
+/* ===== Campaigns Page ===== */
+.inside-content {
+    min-height: 100vh;
+    background: #f3f8fb;
 }
 
-/* Header */
-.campaigns-header {
-  position: relative;
-  display: flex;
-  align-items: center;
-  height: 100px;
-  margin-bottom: 30px;
+.campaigns-content {
+    padding: 20px 50px;
 }
 
-
-.campaigns-header h1 {
-  margin-left: auto;
-  margin-right: 200px; /* сдвиг от правого края */
-  font-size: 36px;    /* было ~22 */
-  font-weight: 700;
-  color: #222;
+/* Контейнер для надписи и дат */
+.header-and-dates-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    position: relative; /* Для позиционирования надписи */
 }
 
-
-/* Date filters */
-
-.date-filters {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  gap: 50px;           /* было 10 */
+/* Даты строго по центру */
+.date-filters-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
 }
 
-/* Сами поля дат */
-.date-filters input {
-  height: 46px;        /* было 36 */
-  min-width: 150px;
-  padding: 0 14px;
-  font-size: 15px;
-  font-weight: 600;
-  border-radius: 8px;
-  border: 1px solid var(--input-border);
+.date-filters-wrapper input {
+    height: 46px; 
+    width: 160px; 
+    padding: 0 15px;
+    font-size: 15px; 
+    font-weight: 600;
+    border-radius: 8px;
+    border: 1px solid var(--input-border);
+    background: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Разделитель "-" */
-.date-filters span {
-  font-size: 18px;
-  font-weight: 700;
-  color: #777;
+.date-filters-wrapper .date-separator {
+    font-size: 18px; 
+    font-weight: 700;
+    color: #777;
 }
 
-.table table{
+/* Надпись Campaigns правее от дат */
+.campaigns-header-right {
+    position: absolute;
+    left: calc(50% + 480px); /* Начинается правее центра + отступ */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.campaigns-header-right h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #222;
+    margin: 0;
+    line-height: 46px;
+    white-space: nowrap;
+}
+
+/* Таблица */
+.table {
+    width: 60%; 
+    margin: 0 auto;
+}
+
+.table table {
     width: 100%;
     text-align: right;
     border: 1px solid #eaeaea;
     border-radius: 5px;
     background: #fff;
-    font-size: 14px;
+    font-size: 15px; 
     border-collapse: collapse;
 }
 
-.table table th{
-    padding: 10px;  
+.table table th {
+    padding: 14px 12px; 
+    font-size: 13px;
+    border-right: 1px solid #eaeaea;
+    background-color: #f8f9fa;
 }
 
-.table table td{
-    padding: 8px 10px;
+.table table td {
+    padding: 11px 12px; 
     border-top: 1px solid #eaeaea;
     border-right: 1px solid #eaeaea;
 }
 
-.table table tr:nth-child(odd) td{
+.table table tr:nth-child(odd) td {
     background-color: #f6f6f6;
 }
 
-
-.table table .id{
-    width:5%;
+/* Column widths */
+.table table .actions {
+    width: 9%;
     text-align: center;
 }
 
-.table table .image{
-    width:8%;
+.table table .id {
+    width: 9%;
     text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.table table .image img{
-    max-height:65px;
-    -webkit-transition: filter 0.4s ease-in-out;
-    transition: filter 0.4s ease-in-out; 
+.table table .title {
+    width: auto;
+    text-align: right;
+    padding-right: 20px;
+    font-weight: 600;
 }
 
-.table table .image img:hover{
-    filter: brightness(120%);
+/* Links */
+.table table td.title a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
 }
 
-.table table .actions{
-    width:10%;
-    text-align: center;
+.table table td.title a:hover {
+    text-decoration: underline;
+    color: var(--btn-main);
 }
 
-.table table .actions a{
-    padding: 0 5px;
+.table table td.id a {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.2s;
 }
 
-
-/* Table */
-.campaigns-table table {
-  width: 100%;
-  border-collapse: collapse;
-  background: #fff;
-  border-radius: 8px;
-  overflow: hidden;
+.table table td.id a:hover {
+    color: var(--btn-main);
 }
 
-.campaigns-table thead {
-  background: #ffffff;
+/* Action icons */
+.table table .actions a {
+    color: #888;
+    font-size: 20px;
+    transition: all 0.2s;
+    display: inline-block;
+    padding: 7px 10px;
+    border-radius: 4px;
 }
 
-.campaigns-table th {
-  font-size: 13px;
-  font-weight: 700;
-  color: #666;
-  text-align: center;
-  padding: 12px 10px;
-  border-bottom: 1px solid #eee;
+.table table .actions a:hover {
+    color: #d11a2a;
+    background-color: rgba(209, 26, 42, 0.1);
 }
 
-.campaigns-table td {
-  font-size: 14px;
-  color: #444;
-  padding: 12px 10px;
-  text-align: center;
-  border-bottom: 1px solid #f0f0f0;
+/* Bold numbers */
+.bold {
+    font-weight: 700 !important;
+    color: #333 !important;
+    font-size: 14px !important;
 }
 
-.campaigns-table tr:nth-child(even) {
-  background: #fafafa;
-}
-
-/* Actions */
-.campaigns-table td.actions a {
-  color: #777;
-  font-size: 15px;
-}
-
-.campaigns-table td.actions a:hover {
-  color: #d11a2a;
-}
-
-/* Title */
-.campaigns-table td.title {
-  text-align: right;
-}
-
-.campaigns-table td.title a {
-  color: #333;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.campaigns-table td.title a:hover {
-  text-decoration: underline;
-}
-
-/* ID */
-.campaigns-table td.id {
-  color: #888;
-  font-size: 13px;
-}
-
-/* Empty */
+/* Empty state */
 .empty {
-  padding: 40px;
-  text-align: center;
-  color: #999;
+    padding: 40px;
+    text-align: center;
+    color: #999;
+    font-size: 18px;
 }
 
-/* Logout button */
+/* ===== User Section ===== */
+.user-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+/* User circle */
+#user-circle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #fff;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ===== Logout button ===== */
 .logout-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  height: 40px;
-  padding: 0 14px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  background: #fff;
-  font-size: 14px;
-  font-weight: 600;
-  color: #444;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.logout-btn i {
-  font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 40px;
+    padding: 0 16px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 .logout-btn:hover {
-  background: #f6f6f6;
-  border-color: #ccc;
+    background: #f6f6f6;
+    border-color: #ccc;
 }
 
-/* Spinner overlay */
+/* ===== Spinner ===== */
 #spinner {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  background: #919fa640 url("../images/loader.gif") no-repeat center;
-  background-size: 50px;
-
-  z-index: 999999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(145, 159, 166, 0.25) url("../images/loader.gif") no-repeat center;
+    background-size: 50px;
+    z-index: 999999;
 }
 
-
-/* GIF loader */
 #spinner::after {
-  content: "";
-  width: 80px;           /* подгони под свою гифку */
-  height: 80px;
-  background: url("../images/loader.gif") no-repeat center;
-  background-size: contain;
+    content: "";
+    width: 80px;
+    height: 80px;
+    background: url("../images/loader.gif") no-repeat center;
+    background-size: contain;
 }
 
-/* ===== Confirm popup  ===== */
+/* ===== Popup ===== */
+.popup-back {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
 
 .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
     border-radius: 6px;
     box-shadow: 0 8px 25px rgba(0,0,0,.2);
+    z-index: 1000;
+    overflow: hidden;
     max-width: 360px;
+    width: 90%;
+    animation: popupFadeIn 0.3s ease-out;
 }
 
 .popup-inner {
     padding: 30px 25px 25px;
 }
 
-/* скрываем header полностью */
-.head-popup {
-    display: none;
+@keyframes popupFadeIn {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -55%) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
 }
 
+/* ===== Confirm Popup ===== */
 .confirm-box {
     position: relative;
     text-align: center;
 }
 
-/* крестик */
 .confirm-close {
     position: absolute;
     top: -10px;
@@ -490,7 +548,6 @@ input:focus {
     cursor: pointer;
 }
 
-/* кнопки как на изображении */
 .confirm-yes {
     background: #00c477;
     color: #fff;
@@ -510,240 +567,529 @@ input:focus {
     opacity: 1;
 }
 
-/* ===== Popup Styles ===== */
-.popup {
-    position: fixed;
-    background: white;
-    border-radius: 6px;
-    box-shadow: 0 8px 25px rgba(0,0,0,.2);
-    z-index: 1000;
-    overflow: hidden;
+/* ===== Header Component Styles ===== */
+
+/* Контейнер для меню (теперь справа от user-circle) */
+#menu {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Меню начинается от user-circle */
+    margin-left: 750px; /* УВЕЛИЧИЛИ отступ от user-circle (было 80px) */
 }
 
-.popup-back {
-    position: fixed;
-    top: 0;
+#menu i.fa-bars {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
+
+#menu ul {
+    display: flex;
+    list-style: none;
+    transform: translateX(40px);
+    margin: 0;
+    padding: 0;
+    gap: 60px;
+}
+
+#menu ul li.al {
+    display: none;
+}
+
+/* ===== Menu Styles ===== */
+#menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s;
+    padding: 32px 0; /* Уменьшили горизонтальный padding, оставили только вертикальный */
+    border-radius: 0; /* Убираем скругление */
+    position: relative; /* Для псевдоэлемента подчеркивания */
+}
+
+/* Убираем фон и тень при наведении, заменяем на подчеркивание */
+#menu ul li a:hover {
+    background: transparent; /* Убираем фон */
+    transform: translateY(-2px);
+}
+
+/* Добавляем подчеркивание при наведении */
+#menu ul li a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: scaleX(0.8);
+    transition: transform 0.2s;
 }
 
-/* Анимация */
-.popup {
-    animation: popupFadeIn 0.3s ease-out;
+/* Активная ссылка - нижнее подчеркивание вместо обводки */
+#menu ul li a.router-link-active {
+    color: var(--btn-main);
+    background: transparent; /* Убираем фон */
+    box-shadow: none; /* Убираем тень */
 }
 
-@keyframes popupFadeIn {
-    0% {
-        opacity: 0;
-        transform: translate(-50%, -55%) scale(0.95);
-    }
-    100% {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-    }
+/* Подчеркивание для активной ссылки */
+#menu ul li a.router-link-active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px; /* Толще чем при наведении */
+    background-color: var(--btn-main);
+    transform: scaleX(1);
 }
 
-/* Для fullscreen режима */
-.popup[style*="top: 0"] {
-    animation: popupFadeInFull 0.3s ease-out;
-    border-radius: 0;
+/* Анимация появления подчеркивания */
+#menu ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -8px; /* Немного ниже текста */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    transform: scaleX(0);
+    transition: all 0.2s ease;
 }
 
-@keyframes popupFadeInFull {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+/* При наведении показываем подчеркивание */
+#menu ul li a:hover::after {
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: scaleX(0.8);
 }
 
-
-.table table td .bold {
-    font-weight: 700 !important;
-    color: #333;
+/* Активная ссылка - полноценное подчеркивание */
+#menu ul li a.router-link-active::after {
+    background-color: var(--btn-main);
+    transform: scaleX(1);
 }
 
-/* Обновленные стили для таблицы с новым порядком колонок */
-.table table .actions {
-    width: 8%;
-    text-align: center;
+/* Убираем старые стили для активной ссылки */
+#menu ul li a.router-link-active {
+    color: var(--btn-main);
+    background: transparent;
+    box-shadow: none;
 }
 
-.table table .id {
-    width: 8%;
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.table table .title {
-    width: auto;
-    text-align: right;
-    padding-right: 25px;
-    font-weight: 600;
-}
-
-/* Иконка корзины */
-.table table .actions a {
-    color: #888;
+/* Иконки остаются прежними */
+#menu ul li a i {
     font-size: 16px;
-    transition: all 0.2s;
-    display: inline-block;
-    padding: 5px 8px;
-    border-radius: 4px;
 }
 
-.table table .actions a:hover {
-    color: #d11a2a;
-    background-color: rgba(209, 26, 42, 0.1);
+/* User-container теперь перед меню */
+#user-top {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-right: 20px; /* УМЕНЬШИЛИ отступ от меню (было 40px) */
 }
 
-/* Ссылки в цифрах */
-.table table td.id a {
-    color: #555;
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-.table table td.id a:hover {
-    color: #00c477;
-}
-
-/* Заголовки */
-.table table th.actions {
-    padding-left: 15px;
-}
-
-.table table th:last-child {
-    padding-right: 15px;
-}
-
-/* ===== Campaigns Table  ===== */
-.table table {
-    width: 75%;
-    text-align: right;
-    border: 1px solid #eaeaea;
-    border-radius: 5px;
+#user-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     background: #fff;
-    font-size: 16px; /* Увеличил с 14px */
-    border-collapse: collapse;
-    transform: scale(1.05); /* Просто увеличиваем всю таблицу */
-    transform-origin: top center;
-    margin: 20px auto;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 22px;
+    cursor: pointer;
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.2s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.table table th {
-    padding: 18px 12px; /* Увеличил padding */
-    font-size: 15px; /* Увеличил заголовки */
+#user-circle:hover {
+    transform: scale(1.08);
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
-.table table td {
-    padding: 16px 12px; /* Увеличил padding */
-    border-top: 1px solid #eaeaea;
-    border-right: 1px solid #eaeaea;
-    font-size: 16px; /* Увеличил текст */
+#user-info {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    padding: 15px;
+    display: none;
+    min-width: 200px;
+    z-index: 100;
+    margin-top: 12px;
 }
 
-/* Увеличиваем ширину колонок */
-.table table .actions {
-    width: 10%; /* было 5% */
+#user-info.active {
+    display: block;
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#user-info a {
+    color: #333;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+#user-info a:hover {
+    background: #f0f7ff;
+    color: var(--btn-main);
+}
+
+#user-info a i {
+    color: #777;
+    font-size: 15px;
+}
+
+#user-top i.fa-caret-down {
+    color: white;
+    cursor: pointer;
+    margin-left: 0;
+    font-size: 18px;
+    transition: transform 0.2s;
+}
+
+#user-top i.fa-caret-down:hover {
+    transform: translateY(2px);
+}
+
+/* Логотип в хедере */
+.header .logo {
+    display: flex;
+    align-items: center;
+    padding-left: 60px; /* Пододвигаем лого вправо с помощью padding */
+}
+
+.header .logo img {
+    height: 70px;
+    /* filter: brightness(0) invert(1); */ /* УБРАЛИ фильтр для оригинальных цветов */
+}
+
+/* Распределение элементов в хедере */
+.header .wrapper .flex {
+    display: flex;
+    align-items: center;
+    height: 100px;
+}
+
+/* Порядок: Логотип → User-circle → Меню */
+.header .wrapper .flex .w20.logo {
+    width: 15%;
+}
+
+.header .wrapper .flex .w70 {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Все начинается слева */
+}
+
+/* Контейнер для user-circle и меню вместе */
+.menu-user-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.header .wrapper .flex .w10.al {
+    width: 15%;
+}
+
+/* Responsive menu */
+@media (max-width: 768px) {
+    #menu {
+        margin-left: 0;
+    }
+    
+    #menu i.fa-bars {
+        display: block;
+        font-size: 32px;
+    }
+    
+    #menu ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--top-bar);
+        flex-direction: column;
+        padding: 25px;
+        border-radius: 0 0 8px 8px;
+        z-index: 100;
+        min-width: 250px;
+        gap: 20px;
+    }
+    
+    #menu ul.active {
+        display: flex;
+    }
+    
+    #menu ul li.al {
+        display: block;
+        text-align: right;
+        margin-bottom: 15px;
+    }
+    
+    #menu ul li.al i {
+        color: white;
+        cursor: pointer;
+        font-size: 24px;
+    }
+    
+    #menu ul li a {
+        font-size: 17px;
+        padding: 10px 15px;
+    }
+    
+    /* На мобильных меняем порядок */
+    .header .wrapper .flex {
+        justify-content: space-between;
+    }
+    
+    #user-top {
+        margin-right: 0;
+        order: 3;
+    }
+    
+    #menu {
+        order: 2;
+    }
+}
+
+/* ===== Toggle Switch Styles ===== */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 36px; /* Уменьшили для таблицы */
+    height: 20px; /* Уменьшили для таблицы */
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 17px;
+    width: 17px;
+    left: 0;
+    bottom: -1px;
+    background-color: white;
+    transition: .4s;
+    box-shadow: 0px 0 10px 0px rgba(70, 70, 70, 0.3);
+}
+
+input:checked + .slider {
+    background-color: #00cb84;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #00cb84;
+}
+
+input:checked + .slider:before {
+    transform: translateX(16px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Альтернатива: абсолютное центрирование */
+.table table td.toggle {
+    position: relative;
     text-align: center;
+    padding: 0;
+    height: 50px; /* Фиксированная высота */
 }
 
-.table table .id {
-    width: 8%; /* было 5% */
-    text-align: center;
-    font-size: 16px; /* Увеличил цифры */
+.table table td.toggle .toggle-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.table table .image {
-    width: 10%; /* было 8% */
-    text-align: center;
+/* Упрощенный вариант переключателя */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
 }
 
-/* Увеличиваем заголовок Campaigns */
-.campaigns-header h1 {
-    margin-left: auto;
-    margin-right: 200px;
-    font-size: 42px !important; /* Увеличил с 36px */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+    box-shadow: 0px 0 5px 0px rgba(70, 70, 70, 0.3);
+}
+
+input:checked + .slider:before {
+    transform: translateX(16px);
+    -webkit-transform: translateX(16px);
+    -ms-transform: translateX(16px);
+}
+
+/* ===== New Button Style ===== */
+.new-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background-color: var(--btn-main);
+    color: white;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    height: 46px;
+}
+
+.new-btn:hover {
+    background-color: var(--btn-hover);
+    transform: translateY(-1px);
+}
+
+.new-btn i {
+    font-size: 12px;
+}
+
+/* ===== Обновленный контейнер для заголовка, кнопки и дат ===== */
+.header-and-dates-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Распределяем элементы */
+    margin-bottom: 30px;
+    padding: 0 20px; /* Добавим отступы по краям */
+}
+
+/* Кнопка New слева - подвигаем к центру */
+.campaigns-header-left {
+    flex: 0 0 auto;
+    margin-left: 40px; /* Сдвигаем кнопку от левого края к центру */
+}
+
+/* Или используем padding */
+.campaigns-header-left {
+    flex: 0 0 auto;
+    padding-left: 350px; /* Еще больше к центру */
+}
+
+/* Или с помощью transform */
+.campaigns-header-left {
+    flex: 0 0 auto;
+    transform: translateX(50px); /* Сдвиг вправо на 50px */
+}
+
+/* Фильтры дат по центру */
+.date-filters-wrapper {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transform: translateX(-200px); /* Слегка сдвигаем влево для баланса */
+}
+
+/* Заголовок Campaigns справа */
+.campaigns-header-right {
+    flex: 0 0 auto;
+    margin-right: 40px; /* Сдвигаем от правого края */
+}
+
+.campaigns-header-right h1 {
+    margin: 0;
+    font-size: 36px;
     font-weight: 700;
     color: #222;
 }
 
-/* Увеличиваем кнопку Logout */
-.logout-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    height: 50px; /* Увеличил с 40px */
-    padding: 0 20px; /* Увеличил padding */
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    background: #fff;
-    font-size: 16px; /* Увеличил текст */
-    font-weight: 600;
-    color: #444;
-    cursor: pointer;
-    transition: all 0.2s ease;
+/* Сдвигаем заголовок в попапе */
+.head-popup .head-title {
+    padding-left: 30px; /* Сдвиг заголовка вправо */
 }
 
-/* Увеличиваем поля дат */
-.date-filters input {
-    height: 52px !important; /* Увеличил с 46px */
-    min-width: 180px !important; /* Увеличил с 150px */
-    padding: 0 16px !important;
-    font-size: 17px !important; /* Увеличил текст */
-    font-weight: 600;
-    border-radius: 8px;
-    border: 1px solid var(--input-border);
+/* Или конкретно для попапа new */
+.popup[ref="new"] .head-title {
+    padding-left: 30px;
 }
 
-/* Увеличиваем разделитель */
-.date-filters span {
-    font-size: 22px !important; /* Увеличил с 18px */
-    font-weight: 700;
-    color: #777;
-}
-
-/* Увеличиваем иконку корзины */
-.table table .actions a i {
-    font-size: 18px !important; /* Увеличил иконку */
-}
-
-/* Увеличиваем жирный текст */
-.table table td .bold {
-    font-weight: 700 !important;
-    font-size: 17px !important; /* Увеличил жирные цифры */
-    color: #333;
-}
-
-/* Увеличиваем ссылки */
-.table table td.title a {
-    font-size: 16px !important; /* Увеличил названия кампаний */
-}
-
-/* Делаем всю страницу чуть больше */
-.campaigns-page {
-    padding: 40px 50px !important; /* Увеличил padding */
-    background: #f3f8fb;
-    min-height: 100vh;
-}
-
-/* Если нужно еще больше - используй этот класс на таблице */
-.big-table {
-    transform: scale(1.1) !important;
-    transform-origin: top center !important;
-}
-
-/* Полный сброс */
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden; /* Убираем скролл */
+/* Или через transform */
+.head-popup .head-title {
+    transform: translateX(20px);
 }
 
