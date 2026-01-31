@@ -193,7 +193,7 @@ input:not(:placeholder-shown) {
 
 
 #spinner {
-    background: #919fa600 url("/images/loader.gif") no-repeat center;
+    background: #919fa600 url("./images/loader.gif") no-repeat center;
     background-size: 50px;
     position: fixed;
     top: 0;
@@ -923,3 +923,4 @@ input:checked + .slider:before {
 	margin-top:0;
     max-height:100%;
 }
+
