@@ -1,188 +1,145 @@
-:root {
-    --top-bar: #3a3a3a;
-    --btn-main: #00c477;
-    --btn-hover: #1c7d82;
-    --bg-light: #eef5f7;
-    --input-border: #d5dde2;
+html, body {
+    height: 100%;
+    margin: 0;
 }
 
-/* ===== Reset / Base ===== */
 * {
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, sans-serif;
 }
 
-body {
-    margin: 0;
-    background: #fff;
-}
-
-/* ===== Layout ===== */
 .flex {
     display: flex;
 }
 
-.w20 { width: 20%; }
-.w40 { width: 40%; }
 .w60 { width: 60%; }
-.w70 { width: 70%; }
-.w80 { width: 80%; }
+.w40 { width: 40%; }
 
-#left-area .header .w60.al h1 {
-    margin-left: -350px;
-}
-.al {
-    text-align: left;
-}
 
-.ptb20 {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
 
-.p20 {
-    padding: 20px;
-}
-
-/* ===== Login Page ===== */
-.login-container {
-    width: 100vw;
-    height: 100vh;
-    flex-direction: row-reverse;
-}
-
-/* Зеркальное лого */
-.mirror-logo {
-    transform: scaleX(-1);
-    height: 80px;
-}
-
-/* ===== Header ===== */
-.header {
-    position: relative;
-    height: 100px;
-    background: var(--top-bar);
-    color: #fff;
-}
-
-.header .wrapper {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding: 0 25px;
-}
-
-.header h1 {
-    font-size: 20px;
-    font-weight: 700;
-    margin: 0;
-}
-
-.logo img {
-    height: 80px;
-}
-
-/* Иконка справа */
-.header .icon,
-.header img:last-child {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.header .icon img,
-.header img:last-child {
-    width: 75px;
-    height: 75px;
-    cursor: pointer;
-}
-
-/* ===== Left area / Form ===== */
-#left-area {
-    background: var(--bg-light);
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-    height: 100vh;
-}
-
-.inner-form {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 150px;
-}
-
-.inner-form form {
-    width: 100%;
-    max-width: 460px;
-}
-
-/* ===== Form elements ===== */
-.row {
-    margin-bottom: 24px;
-}
-
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 17px;
-    font-weight: 800;
-    color: #333;
-    text-align: right;
-}
-
-input {
-    width: 100%;
-    height: 52px;
-    padding: 0 16px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 1px solid var(--input-border);
-    outline: none;
-}
-
-input:focus {
-    border-color: var(--btn-main);
-}
-
-/* ===== Button ===== */
-.btn {
-    width: 100%;
-    height: 54px;
-    background: var(--btn-main);
-    border: none;
-    border-radius: 8px;
-    color: #fff;
-    font-size: 17px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background 0.2s ease;
-}
-
-.btn:hover {
-    background: var(--btn-hover);
-}
-
-/* ===== Right area / Image ===== */
 #right-area {
     width: 60%;
-    overflow: hidden;
     height: 100vh;
 }
 
 #right-area img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-/* Alert message */
+#left-area {
+    width: 40%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.header{
+    background-color: #434242;
+    
+}
+
+.header .flex {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ���������� ����� ��������� */
+.header .flex > div {
+    margin-left: 2%;
+}
+
+.header .flex > div:last-child {
+    margin-left: 0;
+}
+
+.header h1{
+    color: #fff;
+    font-size: 18px;
+    margin: 26px 0 0;
+}
+
+.header .wrapper {
+    display: block;
+}
+
+
+
+.header .logo{
+    padding: 5px 0;
+}
+
+
+.logo img {
+    height: 50px;
+}
+
+.al {
+    text-align: right;
+}
+
+.inner-form {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form form {
+    width: 100%;
+    max-width: 305px; 
+}
+
+.row {
+    margin-bottom: 14px; 
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: right;
+}
+
+input {
+    width: 100%;
+    padding: 11px 12px; 
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: right;
+    transition: background 0.25s ease, border 0.25s ease;
+}
+
+input:focus,
+input:not(:placeholder-shown) {
+    background-color: #e2ecfc;
+    border-color: #1c7681;
+    outline: none;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px; 
+    background-color: #00c477;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.25s ease;
+}
+
+.btn:hover {
+    background-color: #1c7681;
+}
+
 .alertMsg {
     font-size: inherit;
-    padding: 20px 0;
+    padding: 18px 0; 
     position: fixed;
     bottom: 5%;
     left: 2%;
@@ -192,14 +149,13 @@ input:focus {
     display: none;
     color: red;
     background-color: rgba(255, 228, 228, 0.75);
-    box-shadow: 0px 0 10px 0px rgba(205, 30, 11, 0.5);
+    box-shadow: 0 0 10px rgba(205, 30, 11, 0.5);
     animation: showFromLeft 0.3s linear;
 }
 
-/* Success message */
 .successMsg {
     font-size: inherit;
-    padding: 20px 0;
+    padding: 18px 0;
     position: fixed;
     bottom: 5%;
     left: 2%;
@@ -208,271 +164,50 @@ input:focus {
     height: auto;
     display: none;
     color: green;
-    background-color: rgba(218, 249, 223, 0.75);
-    box-shadow: 0px 0 10px 0px rgba(11, 205, 61, 0.5);
-    animation: showFromLeft 0.3s normal;
+    background-color: #dcf7e1; 
+    box-shadow: 0 0 10px rgba(11, 205, 61, 0.5);
+    animation: showFromLeft 0.3s linear;
 }
 
-/* Keyframes for sliding in from left */
 @keyframes showFromLeft {
-    0% { opacity: 0; margin-left: -100%; }
-    25% { opacity: 0.2; margin-left: -50%; }
-    35% { opacity: 0.4; margin-left: -20%; }
-    50% { opacity: 0.8; margin-left: -15%; }
-    65% { opacity: 0.9; margin-left: -12%; }
-    75% { opacity: 0.9; margin-left: -10%; }
-    80% { opacity: 0.9; margin-left: -8%; }
-    85% { opacity: 0.95; margin-left: -6%; }
-    90% { opacity: 0.95; margin-left: -4%; }
-    95% { opacity: 0.95; margin-left: -2%; }
-    100% { opacity: 1; margin-left: 0; }
+    0%   { opacity: 0;   margin-left: -98%; }
+    25%  { opacity: 0.2; margin-left: -52%; }
+    35%  { opacity: 0.4; margin-left: -19%; }
+    50%  { opacity: 0.8; margin-left: -14%; }
+    65%  { opacity: 0.9; margin-left: -11%; }
+    75%  { opacity: 0.9; margin-left: -9%; }
+    80%  { opacity: 0.9; margin-left: -7%; }
+    85%  { opacity: 0.95; margin-left: -5%; }
+    90%  { opacity: 0.95; margin-left: -3%; }
+    95%  { opacity: 0.95; margin-left: -1%; }
+    100% { opacity: 1;   margin-left: 0; }
 }
 
-/* ===== Campaigns Page ===== */
-.inside-content {
-    min-height: 100vh;
-    background: #f3f8fb;
-}
 
-.campaigns-content {
-    padding: 20px 50px;
-}
-
-/* Контейнер для надписи и дат */
-.header-and-dates-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 30px;
-    position: relative; /* Для позиционирования надписи */
-}
-
-/* Даты строго по центру */
-.date-filters-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    position: relative;
-    left: 0;
-    right: 0;
+.wrapper{
+    max-width: 1200px;
     margin: 0 auto;
-}
-
-.date-filters-wrapper input {
-    height: 46px; 
-    width: 160px; 
-    padding: 0 15px;
-    font-size: 15px; 
-    font-weight: 600;
-    border-radius: 8px;
-    border: 1px solid var(--input-border);
-    background: white;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.date-filters-wrapper .date-separator {
-    font-size: 18px; 
-    font-weight: 700;
-    color: #777;
-}
-
-/* Надпись Campaigns правее от дат */
-.campaigns-header-right {
-    position: absolute;
-    left: calc(50% + 480px); /* Начинается правее центра + отступ */
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.campaigns-header-right h1 {
-    font-size: 36px;
-    font-weight: 700;
-    color: #222;
-    margin: 0;
-    line-height: 46px;
-    white-space: nowrap;
-}
-
-/* Таблица */
-.table {
-    width: 60%; 
-    margin: 0 auto;
-}
-
-.table table {
+    padding:0 15px;
     width: 100%;
-    text-align: right;
-    border: 1px solid #eaeaea;
-    border-radius: 5px;
-    background: #fff;
-    font-size: 15px; 
-    border-collapse: collapse;
 }
 
-.table table th {
-    padding: 14px 12px; 
-    font-size: 13px;
-    border-right: 1px solid #eaeaea;
-    background-color: #f8f9fa;
-}
 
-.table table td {
-    padding: 11px 12px; 
-    border-top: 1px solid #eaeaea;
-    border-right: 1px solid #eaeaea;
-}
-
-.table table tr:nth-child(odd) td {
-    background-color: #f6f6f6;
-}
-
-/* Column widths */
-.table table .actions {
-    width: 9%;
-    text-align: center;
-}
-
-.table table .id {
-    width: 9%;
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.table table .title {
-    width: auto;
-    text-align: right;
-    padding-right: 20px;
-    font-weight: 600;
-}
-
-/* Links */
-.table table td.title a {
-    color: #333;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 16px;
-}
-
-.table table td.title a:hover {
-    text-decoration: underline;
-    color: var(--btn-main);
-}
-
-.table table td.id a {
-    color: #555;
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-.table table td.id a:hover {
-    color: var(--btn-main);
-}
-
-/* Action icons */
-.table table .actions a {
-    color: #888;
-    font-size: 20px;
-    transition: all 0.2s;
-    display: inline-block;
-    padding: 7px 10px;
-    border-radius: 4px;
-}
-
-.table table .actions a:hover {
-    color: #d11a2a;
-    background-color: rgba(209, 26, 42, 0.1);
-}
-
-/* Bold numbers */
-.bold {
-    font-weight: 700 !important;
-    color: #333 !important;
-    font-size: 14px !important;
-}
-
-/* Empty state */
-.empty {
-    padding: 40px;
-    text-align: center;
-    color: #999;
-    font-size: 18px;
-}
-
-/* ===== User Section ===== */
-.user-section {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    justify-content: flex-end;
-}
-
-/* User circle */
-#user-circle {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background: #fff;
-    color: #333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 18px;
-    cursor: pointer;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-}
-
-/* ===== Logout button ===== */
-.logout-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    height: 40px;
-    padding: 0 16px;
-    border-radius: 6px;
-    border: 1px solid #ddd;
-    background: #fff;
-    font-size: 14px;
-    font-weight: 600;
-    color: #444;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.logout-btn:hover {
-    background: #f6f6f6;
-    border-color: #ccc;
-}
-
-/* ===== Spinner ===== */
 #spinner {
+    background: #919fa600 url("/images/loader.gif") no-repeat center;
+    background-size: 50px;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(145, 159, 166, 0.25) url("../images/loader.gif") no-repeat center;
-    background-size: 50px;
-    z-index: 999999;
+    z-index: 9999999;
 }
 
-#spinner::after {
-    content: "";
-    width: 80px;
-    height: 80px;
-    background: url("../images/loader.gif") no-repeat center;
-    background-size: contain;
-}
-
-/* ===== Popup ===== */
 .popup-back {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 9998;
 }
 
 .popup {
@@ -480,421 +215,124 @@ input:focus {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: white;
-    border-radius: 6px;
-    box-shadow: 0 8px 25px rgba(0,0,0,.2);
-    z-index: 1000;
-    overflow: hidden;
-    max-width: 360px;
-    width: 90%;
-    animation: popupFadeIn 0.3s ease-out;
+    z-index: 9999;
+    background: #fdfdfc;
+    box-shadow: 0 12px 40px rgba(0,0,0,.25);
+    overflow-y: auto;
 }
 
-.popup-inner {
-    padding: 30px 25px 25px;
-}
-
-@keyframes popupFadeIn {
-    0% {
-        opacity: 0;
-        transform: translate(-50%, -55%) scale(0.95);
-    }
-    100% {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-    }
-}
-
-/* ===== Confirm Popup ===== */
-.confirm-box {
-    position: relative;
-    text-align: center;
-}
-
-.confirm-close {
-    position: absolute;
-    top: -10px;
-    right: -5px;
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-    color: #555;
-}
-
-.confirm-close:hover {
-    color: #000;
-}
-
-.confirm-text {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 25px;
-}
-
-.confirm-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.confirm-btn {
-    min-width: 90px;
-    height: 36px;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-}
-
-.confirm-yes {
-    background: #00c477;
-    color: #fff;
-}
-
-.confirm-yes:hover {
-    background: #18a36f;
-}
-
-.confirm-no {
-    background: #00c477;
-    color: #fff;
-    opacity: .75;
-}
-
-.confirm-no:hover {
-    opacity: 1;
-}
-
-/* ===== Header Component Styles ===== */
-
-/* Контейнер для меню (теперь справа от user-circle) */
-#menu {
-    position: relative;
-    height: 100%;
-    display: flex;
+.head-popup {
+    background: #dee2e8;
+    border-bottom: 1px solid #cfd5db;
     align-items: center;
-    justify-content: flex-start; /* Меню начинается от user-circle */
-    margin-left: 750px; /* УВЕЛИЧИЛИ отступ от user-circle (было 80px) */
+    padding: 20px 0;
 }
 
-#menu i.fa-bars {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
-    color: white;
-}
-
-#menu ul {
-    display: flex;
-    list-style: none;
-    transform: translateX(40px);
-    margin: 0;
-    padding: 0;
-    gap: 60px;
-}
-
-#menu ul li.al {
-    display: none;
-}
-
-/* ===== Menu Styles ===== */
-#menu ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 30px;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: all 0.2s;
-    padding: 32px 0; /* Уменьшили горизонтальный padding, оставили только вертикальный */
-    border-radius: 0; /* Убираем скругление */
-    position: relative; /* Для псевдоэлемента подчеркивания */
-}
-
-/* Убираем фон и тень при наведении, заменяем на подчеркивание */
-#menu ul li a:hover {
-    background: transparent; /* Убираем фон */
-    transform: translateY(-2px);
-}
-
-/* Добавляем подчеркивание при наведении */
-#menu ul li a:hover::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: rgba(255, 255, 255, 0.7);
-    transform: scaleX(0.8);
-    transition: transform 0.2s;
-}
-
-/* Активная ссылка - нижнее подчеркивание вместо обводки */
-#menu ul li a.router-link-active {
-    color: var(--btn-main);
-    background: transparent; /* Убираем фон */
-    box-shadow: none; /* Убираем тень */
-}
-
-/* Подчеркивание для активной ссылки */
-#menu ul li a.router-link-active::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 3px; /* Толще чем при наведении */
-    background-color: var(--btn-main);
-    transform: scaleX(1);
-}
-
-/* Анимация появления подчеркивания */
-#menu ul li a::after {
-    content: '';
-    position: absolute;
-    bottom: -8px; /* Немного ниже текста */
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: transparent;
-    transform: scaleX(0);
-    transition: all 0.2s ease;
-}
-
-/* При наведении показываем подчеркивание */
-#menu ul li a:hover::after {
-    background-color: rgba(255, 255, 255, 0.7);
-    transform: scaleX(0.8);
-}
-
-/* Активная ссылка - полноценное подчеркивание */
-#menu ul li a.router-link-active::after {
-    background-color: var(--btn-main);
-    transform: scaleX(1);
-}
-
-/* Убираем старые стили для активной ссылки */
-#menu ul li a.router-link-active {
-    color: var(--btn-main);
-    background: transparent;
-    box-shadow: none;
-}
-
-/* Иконки остаются прежними */
-#menu ul li a i {
-    font-size: 16px;
-}
-
-/* User-container теперь перед меню */
-#user-top {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-right: 20px; /* УМЕНЬШИЛИ отступ от меню (было 40px) */
-}
-
-#user-circle {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #fff;
-    color: #333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 22px;
-    cursor: pointer;
-    border: 3px solid rgba(255, 255, 255, 0.4);
-    transition: all 0.2s;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-#user-circle:hover {
-    transform: scale(1.08);
-    border-color: rgba(255, 255, 255, 0.6);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-}
-
-#user-info {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-    padding: 15px;
-    display: none;
-    min-width: 200px;
-    z-index: 100;
-    margin-top: 12px;
-}
-
-#user-info.active {
-    display: block;
-    animation: fadeIn 0.2s ease-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-#user-info a {
-    color: #333;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 14px;
-    border-radius: 6px;
-    transition: all 0.2s;
-}
-
-#user-info a:hover {
-    background: #f0f7ff;
-    color: var(--btn-main);
-}
-
-#user-info a i {
-    color: #777;
-    font-size: 15px;
-}
-
-#user-top i.fa-caret-down {
-    color: white;
-    cursor: pointer;
-    margin-left: 0;
+.head-title {
     font-size: 18px;
-    transition: transform 0.2s;
+    font-weight: 600;
+    color: #262828;
+    padding-left: 20px;
 }
 
-#user-top i.fa-caret-down:hover {
-    transform: translateY(2px);
+.head-popup a {
+    color: #262828;
+    font-size: 22px;
+    padding-right: 20px;
+    transition: color .2s ease, transform .2s ease;
 }
 
-/* Логотип в хедере */
-.header .logo {
+.head-popup a:hover {
+    color: #000;
+    transform: scale(1.1);
+}
+
+.popup-inner{
+    padding: 25px;
+    height:100%;
+    overflow-x: auto;
+}
+
+.popup-inner .al {
+    text-align: left;
+}
+
+.popup .botBtns {
     display: flex;
+    justify-content: left;
+    gap: 12px;
+    padding: 15px 0 5px;
+}
+
+.popup .btnS {
+    display: inline-flex;
     align-items: center;
-    padding-left: 60px; /* Пододвигаем лого вправо с помощью padding */
+    justify-content: center;
+
+    background: #00c376;
+    color: #fdfdfc !important;
+
+    text-decoration: none;
+    border-radius: 6px;
+
+    padding: 10px 26px;
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+    transition: background .2s ease, transform .15s ease;
 }
 
-.header .logo img {
-    height: 70px;
-    /* filter: brightness(0) invert(1); */ /* УБРАЛИ фильтр для оригинальных цветов */
+.popup .btnS:hover {
+    background: #1b7f82;
+    transform: translateY(-1px);
 }
 
-/* Распределение элементов в хедере */
-.header .wrapper .flex {
-    display: flex;
-    align-items: center;
-    height: 100px;
+.popup .btnS:active {
+    transform: translateY(0);
 }
 
-/* Порядок: Логотип → User-circle → Меню */
-.header .wrapper .flex .w20.logo {
-    width: 15%;
+.btnS {
+    height: 35px;
+    width: fit-content;
+    background: #00CB84;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .25);
+    line-height: 35px;
+    text-align: center;
+    color: #fff;
+    display: inline-block;
+    padding: 0 15px;
+    border-radius: 6px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    -webkit-transition: .3s;
+    transition: .3s;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    font-family: Roboto, sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    margin-right: 10px;
 }
 
-.header .wrapper .flex .w70 {
-    width: 70%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Все начинается слева */
+.btnS:hover,.btn:hover{
+    background-color: #1f888e;
+    color:#fff;
 }
 
-/* Контейнер для user-circle и меню вместе */
-.menu-user-container {
-    display: flex;
-    align-items: center;
-    width: 100%;
+.btnS:active,.btn:active{
+    background-color: #1f4b8e;
+    color:#fff;
 }
 
-.header .wrapper .flex .w10.al {
-    width: 15%;
-}
 
-/* Responsive menu */
-@media (max-width: 768px) {
-    #menu {
-        margin-left: 0;
-    }
-    
-    #menu i.fa-bars {
-        display: block;
-        font-size: 32px;
-    }
-    
-    #menu ul {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background: var(--top-bar);
-        flex-direction: column;
-        padding: 25px;
-        border-radius: 0 0 8px 8px;
-        z-index: 100;
-        min-width: 250px;
-        gap: 20px;
-    }
-    
-    #menu ul.active {
-        display: flex;
-    }
-    
-    #menu ul li.al {
-        display: block;
-        text-align: right;
-        margin-bottom: 15px;
-    }
-    
-    #menu ul li.al i {
-        color: white;
-        cursor: pointer;
-        font-size: 24px;
-    }
-    
-    #menu ul li a {
-        font-size: 17px;
-        padding: 10px 15px;
-    }
-    
-    /* На мобильных меняем порядок */
-    .header .wrapper .flex {
-        justify-content: space-between;
-    }
-    
-    #user-top {
-        margin-right: 0;
-        order: 3;
-    }
-    
-    #menu {
-        order: 2;
-    }
-}
 
-/* ===== Toggle Switch Styles ===== */
 .switch {
     position: relative;
     display: inline-block;
-    width: 36px; /* Уменьшили для таблицы */
-    height: 20px; /* Уменьшили для таблицы */
+    width: 30px;
+    height: 15px;
 }
 
 .switch input {
@@ -921,7 +359,7 @@ input:focus {
     bottom: -1px;
     background-color: white;
     transition: .4s;
-    box-shadow: 0px 0 10px 0px rgba(70, 70, 70, 0.3);
+    box-shadow: 0px 0px 10px 0px rgba(70, 70, 70, 0.3);
 }
 
 input:checked + .slider {
@@ -936,7 +374,7 @@ input:checked + .slider:before {
     transform: translateX(16px);
 }
 
-/* Rounded sliders */
+/* ���������� */
 .slider.round {
     border-radius: 34px;
 }
@@ -945,151 +383,543 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
-/* Альтернатива: абсолютное центрирование */
-.table table td.toggle {
-    position: relative;
-    text-align: center;
-    padding: 0;
-    height: 50px; /* Фиксированная высота */
-}
-
-.table table td.toggle .toggle-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* Упрощенный вариант переключателя */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 36px;
-    height: 20px;
+#menu{
     margin: 0;
-    padding: 0;
-    line-height: 0;
 }
 
-.slider {
-    position: absolute;
+#menu > i, #menu li > i{
+    display:none;
+}
+
+#menu ul{
+    margin: 0;
+    direction: rtl;
+}
+
+#menu li{
+    display: inline-block;
+}
+
+#menu li a{
+    font-size: 18px;
+    color: #fff;
+    padding: 27px;
+    display: block;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-bottom: 5px solid #434242;
+}
+
+#menu li a.router-link-active{
+    color:#00CB84; 
+    border-bottom: 5px solid #00CB84;
+}
+
+#menu li a:hover{
+    color:#00CB84;
+    background-color: #333;
+    border-bottom: 5px solid #333;
+}
+#user-top{
+    padding: 18px 0 0;
+    position: relative;
+    align-items: center;
+}
+
+#user-top #user-circle{
+    background-color: #212121;
+    color: #fff;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    align-items: center;
+    text-align: center;
+    border-radius: 50px;
+    display: inline-block;
+    margin-left: 6px;
     cursor: pointer;
+}
+
+#user-top i{
+    cursor: pointer;
+    color: #fff; 
+}
+
+#user-top #user-info {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid var(--gray-3);
+    border-radius: 7px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+    z-index: 9;
+    width: 155px;
+    font-size: 15px;
+    color: #000;
+    right: calc(-50% + 15px);
+    top: 0;
+    padding: 10px;
+    margin: 55px 0 0;
+
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+#user-top #user-info.active {
+    max-height: 500px;
+    opacity: 1;
+    text-align: center;
+}
+
+#user-top #user-info a {
+    padding: 10px 0;
+    text-decoration: none;
+    color: #000; /* ������� ����� */
+    display: block;
+    transition: background-color 0.2s;
+}
+
+#user-top #user-info a:hover {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+.p5{
+    padding:5%;
+}
+
+.p10{
+    padding:10%;
+}
+
+.p15{
+    padding:15%;
+}
+
+.p20{
+    padding:20%;
+}
+
+.p25{
+    padding:25%;
+}
+
+.p30{
+    padding:30%;
+}
+
+.p40{
+    padding:40%;
+}
+
+.p50{
+    padding:50%;
+}
+
+
+
+.w30{
+    width:30%;
+}
+
+
+.w50{
+    width:50%;
+}
+
+.w60{
+    width:60%;
+}
+
+.w70{
+    width:70%;
+}
+
+.w80{
+    width:80%;
+}
+
+.w90{
+    width:90%;
+}
+
+.w100{
+    width:100%;
+}
+
+.auth-header {
+    background-color: #434242;
+}
+
+.auth-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
+}
+
+.auth-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.auth-flex > div {
+    margin-right: 2%;
+}
+
+.auth-flex > div:last-child {
+    margin-right: 0;
+}
+
+.auth-col-60 {
+    width: 60%;
+}
+
+.auth-col-40 {
+    width: 40%;
+}
+
+.auth-header h1 {
+    color: #fff;
+    font-size: 18px;
+    margin: 26px 0 0;
+}
+
+.auth-logo {
+    padding: 5px 0;
+}
+
+.auth-logo img {
+    height: 50px;
+}
+
+.auth-align-right {
+    text-align: right;
+}
+
+/* ��� */
+
+
+#chartHints{
+    position: relative;
+    height: 65px;
+    font-weight: bold;
+}
+
+#chartHints .chartHintsViews{
+    position: absolute;
+    left:0;
+    bottom: 5px;
+}
+
+#chartHints .chartHintsClicks{
+    position: absolute;
+    right:0;
+    bottom: 5px;
+}
+
+
+.table table .actions{
+    width:10%;
+    text-align: center;
+}
+
+.table table .actions a{
+    padding: 0 5px;
+}
+
+.filchart{
+    background-color: #f8f8f8;
+    padding: 15px;
+    overflow: auto;
+}
+
+.itemchart{
+    
+}
+
+.itemchart label,.itemchart img{
+    vertical-align: middle;
+    display: inline-block;
+    padding: 0 5px;
+}
+
+.popup-back{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    background-color: #00000033;
+}
+
+.panelTop{
+    background:#00c9831a;
+}
+
+.cubes{
+    text-align: right;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #333;
+}
+
+.cubes > div{
+    color: #333;
+    font-size: 35px;
+    padding: 20px;
+}
+
+.cubes > div > div{
+    font-size: 16px;
+    margin: 0 0 15px;
+}
+
+.cubes .clicks{
+    background-color: #00599D;
+    color:#fff;
+}
+
+.cubes .views{
+    background-color: #5000B8;
+    color:#fff;
+}
+
+.cubes .leads{
+    background-color:#379D00;
+    color:#fff;
+}
+
+.ar{
+    text-align: right;
+}
+
+.popup.fullscreen .body {
+    flex-direction: row-reverse;
+}
+
+.popup.fullscreen {
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    border-radius: 34px;
+    transform: none;
+    width: 100%;
+    height: 100%;
 }
 
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    left: 2px;
-    bottom: 2px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
-    box-shadow: 0px 0 5px 0px rgba(70, 70, 70, 0.3);
+.ptb20{
+    padding: 20px 0;
 }
 
-input:checked + .slider:before {
-    transform: translateX(16px);
-    -webkit-transform: translateX(16px);
-    -ms-transform: translateX(16px);
+.inside-content {
+    min-height: 100vh;
+    background: #eff6f9;
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    color: #2c2f33;
 }
 
-/* ===== New Button Style ===== */
-.new-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    background-color: var(--btn-main);
-    color: white;
-    border: none;
-    font-size: 14px;
+.inside-content h1 {
+    font-size: 26px;
     font-weight: 600;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    height: 46px;
+    color: #2b2f33;
 }
 
-.new-btn:hover {
-    background-color: var(--btn-hover);
-    transform: translateY(-1px);
+.inside-content input[type="date"] {
+    background: #f2f6fc;
+    border: 1px solid #d6dde3;
+    border-radius: 6px;
+    padding: 6px 10px;
+    margin: 0 6px;
 }
 
-.new-btn i {
-    font-size: 12px;
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
 }
 
-/* ===== Обновленный контейнер для заголовка, кнопки и дат ===== */
-.header-and-dates-container {
+.panel {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Распределяем элементы */
-    margin-bottom: 30px;
-    padding: 0 20px; /* Добавим отступы по краям */
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 20px;
 }
 
-/* Кнопка New слева - подвигаем к центру */
-.campaigns-header-left {
-    flex: 0 0 auto;
-    margin-left: 40px; /* Сдвигаем кнопку от левого края к центру */
-}
-
-/* Или используем padding */
-.campaigns-header-left {
-    flex: 0 0 auto;
-    padding-left: 350px; /* Еще больше к центру */
-}
-
-/* Или с помощью transform */
-.campaigns-header-left {
-    flex: 0 0 auto;
-    transform: translateX(50px); /* Сдвиг вправо на 50px */
-}
-
-/* Фильтры дат по центру */
-.date-filters-wrapper {
-    flex: 0 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    transform: translateX(-200px); /* Слегка сдвигаем влево для баланса */
-}
-
-/* Заголовок Campaigns справа */
-.campaigns-header-right {
-    flex: 0 0 auto;
-    margin-right: 40px; /* Сдвигаем от правого края */
-}
-
-.campaigns-header-right h1 {
+.panel h1 {
     margin: 0;
-    font-size: 36px;
-    font-weight: 700;
-    color: #222;
+    line-height: 1;
 }
 
-/* Сдвигаем заголовок в попапе */
-.head-popup .head-title {
-    padding-left: 30px; /* Сдвиг заголовка вправо */
+.date-range {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-/* Или конкретно для попапа new */
-.popup[ref="new"] .head-title {
-    padding-left: 30px;
+.date-range input[type="date"] {
+    width: 160px;
+    text-align: center;
+    padding: 8px 10px;
+    font-size: 14px;
 }
 
-/* Или через transform */
-.head-popup .head-title {
-    transform: translateX(20px);
+.date-range .dash {
+    font-size: 16px;
+    color: #7b8a97;
 }
 
+
+.table {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+    margin-top: 20px;
+}
+
+.table table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    background: #fff;
+    font-size: 14px;
+    text-align: right;
+    transform: scaleX(-1);
+}
+
+.table table th,
+.table table td {
+    transform: scaleX(-1);
+}
+
+.table table a {
+    color: #2c2f33;
+    text-decoration: none;
+}
+
+.table table thead th {
+    padding: 10px 12px;
+    font-size: 13px;
+    background: #fdfdfc;
+    border-bottom: 1px solid #e4eaef;
+    text-align: center;
+}
+
+.table table tbody td {
+    padding: 8px 10px;
+    border-top: 2px solid #eaeaea;
+    border-right: 2px solid #eaeaea;
+}
+
+.table table tbody tr:nth-child(odd) td {
+    background-color: #f6f6f6;
+}
+
+.table table .image {
+    width: 8%;
+    text-align: center;
+}
+
+.table table .actions {
+    width: 10%;
+    text-align: center;
+}
+
+.table table .text {
+    width: auto;
+    text-align: right;
+}
+
+.table table .id {
+    text-align: center;
+    width: 5%;
+}
+
+.table table .image {
+    width: 8%;
+}
+
+.table table .actions {
+    width: 10%;
+}
+
+
+.table table .image img {
+    max-height: 65px;
+    transition: filter 0.4s ease-in-out;
+}
+
+.table table .image img:hover {
+    filter: brightness(120%);
+}
+
+.table table .actions a {
+    padding: 0 5px;
+}
+
+.actions i {
+    color: #2c2f33;
+}
+
+.actions a:hover i {
+    color: #00c477;
+}
+
+.table table .text {
+    width: auto;
+    text-align: right;
+}
+
+.popup.ad-popup {
+    top: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+#adPopup .image-upload-icon {
+    display: none;
+}
+
+  .image-preview-area {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    min-height: 125px;
+    min-width: 125px;
+    padding: 0;
+    height: auto;
+    text-align: center;
+    position: relative;
+	border: 1px solid #e5e5e5;
+	position:relative;
+}
+
+.image-preview-area a{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
+
+.image-preview-area a img{
+	top:50%;
+	position:relative;
+	margin-top:-24px;
+}
+
+.image-preview-area a img.im{
+	top:0;
+	margin-top:0;
+    max-height:100%;
+}
