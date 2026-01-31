@@ -1,32 +1,29 @@
 export var toogle = {
-    data: function() {
+    data: function(){
         return {
-            checked: false
+            value:""
         }
     },
-    watch: {
-        modelValue: function(newVal) {
-            // Преобразуем строку в булево значение
-            this.checked = newVal === "1" || newVal === true || newVal === "true";
+
+    watch:{
+        modelValue:function(o,n){
+            this.value = this.modelValue;
         }
     },
-    mounted() {
-        // Инициализируем начальное состояние
-        this.checked = this.modelValue === "1" || this.modelValue === true || this.modelValue === "true";
+    mounted(){
+        this.value=this.modelValue;
     },
     methods: {
         change() {
-            // Отправляем "1" для true, "0" для false
-            const value = this.checked ? "1" : "0";
-            this.$emit('update:modelValue', value);
+        this.$emit('update:modelValue', this.value.toString());
         }
     },
     props: {
-        modelValue: [String, Boolean] // Принимаем и строку и булево
+        modelValue: String
     },
-    template: `
+    template:`
         <label class="switch">
-            <input type="checkbox" v-model="checked" @change="change()">
+            <input type="checkbox" v-model="value" @change="change()">
             <span class="slider round"></span>
         </label>
     `

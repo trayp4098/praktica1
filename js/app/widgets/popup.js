@@ -3,75 +3,82 @@ export const popup = {
   data() {
     return {
       active: 0,
-      top: 0,
-      widthVal: '500px',
-      ml: '-250px',
-      left: '50%',
-      height: 'auto'
+      ro: null
+    };
+  },
+  mounted() {
+    window.addEventListener('resize', this.centerPopup);
+  },
+  methods: {
+    centerPopup() {
+      if (!this.$refs.popup || this.fullscreen) return;
+
+      const popup = this.$refs.popup;
+      const windowHeight = window.innerHeight;
+      const popupHeight = popup.offsetHeight;
+
+      
+      if (popupHeight < windowHeight) {
+        popup.style.top = `${(windowHeight - popupHeight) / 2}px`;
+      } else {
+        
+      }
     }
   },
   watch: {
-    active: function(o, n) {
-      if (o == 1 && !this.fullscreen) {
-        var self = this;
-        setTimeout(function() {
-          let height = self.$refs.popup.clientHeight / 2;
-          self.top = "calc(50% - " + height + "px)";
-        }, 10);
+    active(n) {
+      if (n === 1 && !this.fullscreen) {
+        this.$nextTick(() => {
+          this.centerPopup();
+
+          this.ro = new ResizeObserver(() => {
+            this.centerPopup();
+          });
+
+          this.ro.observe(this.$refs.popup);
+        });
       }
-      
-      if (this.fullscreen) {
-        this.top = 0;
-        this.widthVal = '100%';
-        this.ml = 0;
-        this.left = 0;
-        this.height = '100%';
+
+      if (n === 0 && this.ro) {
+        this.ro.disconnect();
+        this.ro = null;
       }
     }
   },
+  beforeUnmount() {
+    if (this.ro) this.ro.disconnect();
+    window.removeEventListener('resize', this.centerPopup);
+  },
   template: `
-    <div v-if="active==1">
+    <template v-if="active === 1">
       <div class="popup-back"></div>
-      <div class="popup" 
-           :style="getPopupStyle()" 
-           ref="popup">
+
+      <div
+        class="popup"
+        :class="{ fullscreen: fullscreen }"
+        ref="popup"
+        :style="{
+          left: fullscreen ? 0 : '50%',
+          transform: fullscreen ? 'none' : 'translateX(-50%)',
+          maxHeight: fullscreen ? '100%' : '90vh',
+          overflowY: 'auto'
+        }"
+      >
         <div class="flex head-popup">
           <div class="w80 ptb20">
-            <div class="head-title">{{title}}</div>
+            <div class="head-title">{{ title }}</div>
           </div>
           <div class="w20 al ptb20">
-            <a href="#" @click.prevent="active=0">
+            <a href="#" @click.prevent="active = 0">
               <i class="fas fa-window-close"></i>
             </a>
           </div>
         </div>
+
         <div class="popup-inner">
           <slot />
         </div>
       </div>
-    </div>
-  `,
-  methods: {
-    getPopupStyle() {
-      if (this.fullscreen) {
-        return {
-          top: '0',
-          left: '0',
-          width: '100%',
-          height: '100%',
-          'max-width': '100%',
-          'margin-left': '0'
-        };
-      }
-      
-      return {
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        'max-width': '360px',
-        width: '90%',
-        'margin-left': '0'
-      };
-    }
-  }
+    </template>
+  `
 };

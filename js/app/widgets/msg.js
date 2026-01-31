@@ -5,26 +5,25 @@ export const msg = {
             success: "",
             t1: null,
             t2: null,
-
-            confirm: "",
             code: 0,
-            interval: null,
-
             parent: null
-        }
+        };
     },
 
     mounted() {
-        this.parent = this.$parent.$parent;
+        this.parent = this.$parent;
     },
 
     methods: {
-        fadeIn(el, timeout, display = 'block') {
+        fadeIn(el, timeout, display) {
             if (!el) return;
             el.style.opacity = 0;
-            el.style.display = display;
+            el.style.display = display || 'block';
             el.style.transition = `opacity ${timeout}ms`;
-            setTimeout(() => el.style.opacity = 1, 10);
+
+            setTimeout(() => {
+                el.style.opacity = 1;
+            }, 10);
         },
 
         fadeOut(el, timeout) {
@@ -32,62 +31,77 @@ export const msg = {
             el.style.opacity = 1;
             el.style.transition = `opacity ${timeout}ms`;
             el.style.opacity = 0;
-            setTimeout(() => el.style.display = 'none', timeout);
+
+            setTimeout(() => {
+                el.style.display = 'none';
+            }, timeout);
         },
 
         successFun(msg) {
             this.success = msg;
-            this.alert = "";
+            const self = this;
 
-            clearTimeout(this.t1);
-            clearTimeout(this.t2);
+            const block = document.querySelector('.successMsg');
+            if (!block) return;
 
-            this.t1 = setTimeout(() => {
-                const block = document.querySelector('.successMsg');
-                this.fadeIn(block, 300, 'flex');
+            clearTimeout(self.t1);
+            clearTimeout(self.t2);
 
-                this.t2 = setTimeout(() => {
-                    this.fadeOut(block, 300);
-                    this.success = "";
+            self.t1 = setTimeout(() => {
+                self.fadeIn(block, 1000);
+
+                self.t2 = setTimeout(() => {
+                    self.fadeOut(block, 1000);
                 }, 3000);
+
             }, 100);
         },
 
         alertFun(msg) {
             this.alert = msg;
-            this.success = "";
+            const self = this;
 
-            clearTimeout(this.t1);
-            clearTimeout(this.t2);
+            const block = document.querySelector('.alertMsg');
+            if (!block) return;
 
-            this.t1 = setTimeout(() => {
-                const block = document.querySelector('.alertMsg');
-                this.fadeIn(block, 300, 'flex');
+            block.style = "";
 
-                this.t2 = setTimeout(() => {
-                    this.fadeOut(block, 300);
-                    this.alert = "";
+            clearTimeout(self.t1);
+            clearTimeout(self.t2);
+
+            self.t1 = setTimeout(() => {
+                self.fadeIn(block, 1000);
+
+                self.t2 = setTimeout(() => {
+                    self.fadeOut(block, 1000);
                 }, 3000);
+
             }, 100);
         },
 
-        // ===== CONFIRM =====
-        confirmFun(text) {
+        confirmFun(title, text) {
             this.code = 0;
-            this.confirm = text;
+            var self = this;
 
-            this.$refs.confirm.active = 1;
+            return new Promise(function (resolve, reject) {
+                self.confirmTitle = title;
+                self.confirm = text;
+                self.$refs.confirm.active = 1;
 
-            return new Promise((resolve) => {
-                this.interval = setInterval(() => {
-                    if (this.code > 0) {
-                        resolve(this.code === 1);
-                    }
+                self.interval = setInterval(function () {
+                    if (self.code > 0) resolve();
                 }, 100);
-            }).then((res) => {
-                clearInterval(this.interval);
-                this.$refs.confirm.active = 0;
-                return res;
+            }).then(function () {
+                clearInterval(self.interval);
+                self.$refs.confirm.active = 0;
+
+                if (self.code == 1) {
+                    return true;
+                }
+
+                if (self.code == 2) {
+                    return false;
+                }
             });
         }
     },
@@ -107,26 +121,16 @@ export const msg = {
             </div>
         </div>
 
-        <popup ref="confirm">
-            <div class="confirm-box">
-                <button class="confirm-close" @click.prevent="code = 2">×</button>
+        <popup ref="confirm" :title="confirmTitle">
+            <div class="al">
+                <i class="fas fa-info-circle"></i> {{ confirm }}
 
-                <div class="confirm-text">
-                    {{ confirm }}
-                </div>
-
-                <div class="confirm-buttons">
-                    <button class="confirm-btn confirm-no"
-                            @click.prevent="code = 2">
-                        No
-                    </button>
-
-                    <button class="confirm-btn confirm-yes"
-                            @click.prevent="code = 1">
-                        Yes
-                    </button>
+                <div class="botBtns">
+                    <a class="btnS" href="#" @click.prevent="code = 1">Yes</a>
+                    <a class="btnS" href="#" @click.prevent="code = 2">No</a>
                 </div>
             </div>
         </popup>
+
     `
 };
