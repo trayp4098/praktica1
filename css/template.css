@@ -15,8 +15,6 @@ html, body {
 .w60 { width: 60%; }
 .w40 { width: 40%; }
 
-
-
 #right-area {
     width: 60%;
     height: 100vh;
@@ -39,7 +37,6 @@ html, body {
 
 .header{
     background-color: #434242;
-    
 }
 
 .header .flex {
@@ -48,7 +45,6 @@ html, body {
     align-items: center;
 }
 
-/* ���������� ����� ��������� */
 .header .flex > div {
     margin-left: 2%;
 }
@@ -67,12 +63,9 @@ html, body {
     display: block;
 }
 
-
-
 .header .logo{
     padding: 5px 0;
 }
-
 
 .logo img {
     height: 50px;
@@ -183,14 +176,12 @@ input:not(:placeholder-shown) {
     100% { opacity: 1;   margin-left: 0; }
 }
 
-
 .wrapper{
     max-width: 1200px;
     margin: 0 auto;
     padding:0 15px;
     width: 100%;
 }
-
 
 #spinner {
     background: #919fa600 url("../images/loader.gif") no-repeat center;
@@ -268,17 +259,13 @@ input:not(:placeholder-shown) {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     background: #00c376;
     color: #fdfdfc !important;
-
     text-decoration: none;
     border-radius: 6px;
-
     padding: 10px 26px;
     font-size: 14px;
     font-weight: 500;
-
     cursor: pointer;
     transition: background .2s ease, transform .15s ease;
 }
@@ -326,8 +313,6 @@ input:not(:placeholder-shown) {
     color:#fff;
 }
 
-
-
 .switch {
     position: relative;
     display: inline-block;
@@ -374,7 +359,6 @@ input:checked + .slider:before {
     transform: translateX(16px);
 }
 
-/* ���������� */
 .slider.round {
     border-radius: 34px;
 }
@@ -420,6 +404,7 @@ input:checked + .slider:before {
     background-color: #333;
     border-bottom: 5px solid #333;
 }
+
 #user-top{
     padding: 18px 0 0;
     position: relative;
@@ -459,7 +444,6 @@ input:checked + .slider:before {
     top: 0;
     padding: 10px;
     margin: 55px 0 0;
-
     max-height: 0;
     opacity: 0;
     overflow: hidden;
@@ -475,7 +459,7 @@ input:checked + .slider:before {
 #user-top #user-info a {
     padding: 10px 0;
     text-decoration: none;
-    color: #000; /* ������� ����� */
+    color: #000;
     display: block;
     transition: background-color 0.2s;
 }
@@ -485,68 +469,22 @@ input:checked + .slider:before {
     border-radius: 5px;
 }
 
-.p5{
-    padding:5%;
-}
+.p5{ padding:5%; }
+.p10{ padding:10%; }
+.p15{ padding:15%; }
+.p20{ padding:20%; }
+.p25{ padding:25%; }
+.p30{ padding:30%; }
+.p40{ padding:40%; }
+.p50{ padding:50%; }
 
-.p10{
-    padding:10%;
-}
-
-.p15{
-    padding:15%;
-}
-
-.p20{
-    padding:20%;
-}
-
-.p25{
-    padding:25%;
-}
-
-.p30{
-    padding:30%;
-}
-
-.p40{
-    padding:40%;
-}
-
-.p50{
-    padding:50%;
-}
-
-
-
-.w30{
-    width:30%;
-}
-
-
-.w50{
-    width:50%;
-}
-
-.w60{
-    width:60%;
-}
-
-.w70{
-    width:70%;
-}
-
-.w80{
-    width:80%;
-}
-
-.w90{
-    width:90%;
-}
-
-.w100{
-    width:100%;
-}
+.w30{ width:30%; }
+.w50{ width:50%; }
+.w60{ width:60%; }
+.w70{ width:70%; }
+.w80{ width:80%; }
+.w90{ width:90%; }
+.w100{ width:100%; }
 
 .auth-header {
     background-color: #434242;
@@ -600,9 +538,6 @@ input:checked + .slider:before {
     text-align: right;
 }
 
-/* ��� */
-
-
 #chartHints{
     position: relative;
     height: 65px;
@@ -620,7 +555,6 @@ input:checked + .slider:before {
     right:0;
     bottom: 5px;
 }
-
 
 .table table .actions{
     width:10%;
@@ -773,7 +707,6 @@ input:checked + .slider:before {
     color: #7b8a97;
 }
 
-
 .table {
     background: #fff;
     border-radius: 8px;
@@ -848,7 +781,6 @@ input:checked + .slider:before {
     width: 10%;
 }
 
-
 .table table .image img {
     max-height: 65px;
     transition: filter 0.4s ease-in-out;
@@ -887,7 +819,7 @@ input:checked + .slider:before {
     display: none;
 }
 
-  .image-preview-area {
+.image-preview-area {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
@@ -900,26 +832,295 @@ input:checked + .slider:before {
     height: auto;
     text-align: center;
     position: relative;
-	border: 1px solid #e5e5e5;
-	position:relative;
+    border: 1px solid #e5e5e5;
+    position:relative;
 }
 
 .image-preview-area a{
-	position:absolute;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
 }
 
 .image-preview-area a img{
-	top:50%;
-	position:relative;
-	margin-top:-24px;
+    top:50%;
+    position:relative;
+    margin-top:-24px;
 }
 
 .image-preview-area a img.im{
-	top:0;
-	margin-top:0;
+    top:0;
+    margin-top:0;
     max-height:100%;
+}
+
+/* ========================================
+   АДАПТИВНЫЕ СТИЛИ
+   ======================================== */
+
+/* Планшеты и средние экраны */
+@media screen and (max-width: 1024px) {
+    .wrapper, .auth-wrapper {
+        padding: 0 20px;
+    }
+    
+    #menu li a {
+        font-size: 16px;
+        padding: 20px 15px;
+    }
+    
+    .panel {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .inside-content h1 {
+        font-size: 22px;
+    }
+    
+    .cubes > div {
+        font-size: 28px;
+        padding: 15px;
+    }
+}
+
+/* Маленькие планшеты */
+@media screen and (max-width: 768px) {
+    /* Главная страница - стек вместо side-by-side */
+    #left-area {
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    #right-area {
+        display: none; /* Скрываем изображение на мобильных */
+    }
+    
+    /* Или если хотите показать под формой: */
+    /* .flex {
+        flex-direction: column;
+    }
+    
+    #left-area,
+    #right-area {
+        width: 100%;
+    }
+    
+    #right-area {
+        height: 50vh;
+    } */
+    
+    /* Меню */
+    #menu li {
+        display: block;
+        width: 100%;
+    }
+    
+    #menu li a {
+        padding: 15px;
+        border-bottom: 1px solid #333;
+        border-right: 5px solid #434242;
+    }
+    
+    #menu li a.router-link-active {
+        border-right: 5px solid #00CB84;
+        border-bottom: 1px solid #333;
+    }
+    
+    #menu li a:hover {
+        border-right: 5px solid #00CB84;
+        border-bottom: 1px solid #333;
+    }
+    
+    /* Хедер */
+    .header .flex {
+        flex-wrap: wrap;
+    }
+    
+    .header h1 {
+        font-size: 16px;
+        margin: 15px 0 0;
+    }
+    
+    .logo img {
+        height: 40px;
+    }
+    
+    /* Auth страница */
+    .auth-flex {
+        flex-direction: column;
+    }
+    
+    .auth-col-60,
+    .auth-col-40 {
+        width: 100%;
+    }
+    
+    /* Формы */
+    .form form {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+    
+    /* Таблицы */
+    .table {
+        overflow-x: auto;
+    }
+    
+    .table table {
+        font-size: 12px;
+    }
+    
+    .table table thead th,
+    .table table tbody td {
+        padding: 6px 8px;
+    }
+    
+    .table table .image img {
+        max-height: 50px;
+    }
+    
+    /* Попапы */
+    .popup {
+        width: 95%;
+        max-width: 95%;
+    }
+    
+    .popup-inner {
+        padding: 15px;
+    }
+    
+    .head-title {
+        font-size: 16px;
+        padding-left: 15px;
+    }
+    
+    .popup .botBtns {
+        flex-wrap: wrap;
+    }
+    
+    /* Кубики статистики */
+    .cubes {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .cubes > div {
+        font-size: 24px;
+        padding: 15px;
+    }
+    
+    /* Панель с датами */
+    .date-range {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+    
+    .date-range input[type="date"] {
+        width: 100%;
+    }
+    
+    /* User menu */
+    #user-top #user-info {
+        right: 0;
+        width: 200px;
+    }
+    
+    /* Адаптивные ширины */
+    .w30, .w40, .w50, .w60, .w70, .w80, .w90 {
+        width: 100%;
+    }
+}
+
+/* Мобильные телефоны */
+@media screen and (max-width: 480px) {
+    .wrapper, .auth-wrapper {
+        padding: 0 10px;
+    }
+    
+    .header h1 {
+        font-size: 14px;
+    }
+    
+    .logo img {
+        height: 35px;
+    }
+    
+    #menu li a {
+        font-size: 14px;
+        padding: 12px;
+    }
+    
+    .inside-content h1 {
+        font-size: 18px;
+    }
+    
+    .cubes > div {
+        font-size: 20px;
+        padding: 12px;
+    }
+    
+    .cubes > div > div {
+        font-size: 14px;
+    }
+    
+    .table table {
+        font-size: 11px;
+    }
+    
+    .table table thead th,
+    .table table tbody td {
+        padding: 4px 6px;
+    }
+    
+    .btnS, .btn {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+    
+    .popup .btnS {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+    
+    input {
+        padding: 9px 10px;
+        font-size: 14px;
+    }
+    
+    label {
+        font-size: 13px;
+    }
+    
+    .alertMsg, .successMsg {
+        left: 5%;
+        right: 5%;
+        font-size: 14px;
+        padding: 12px;
+    }
+}
+
+/* Очень маленькие экраны */
+@media screen and (max-width: 360px) {
+    .wrapper, .auth-wrapper {
+        padding: 0 8px;
+    }
+    
+    .form form {
+        padding: 0 10px;
+    }
+    
+    .table table .image {
+        display: none; /* Скрываем картинки в таблице на очень маленьких экранах */
+    }
+    
+    .cubes > div {
+        font-size: 18px;
+        padding: 10px;
+    }
 }
